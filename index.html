@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Himnario con más de 1000 Himnos y Cánticos del Evangelio para Android">
+    <title>Himnos y Cánticos del Evangelio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <img src="assets/media/icon.jpg" alt="Imagen del Header" class="logo">
+            <h1 class="titulo">Himnos y C&aacutenticos del Evangelio</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Inicio</a></li>
+                <li><a href="#features">Características</a></li>
+                <li><a href="#fallas">Info. y Limitaciones</a></li>
+                <li><a href="#contact">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home">
+        <div class="container">
+            <!-- Columna izquierda con video -->
+            <div class="left-column">
+                <div class="video-container">
+                    <video autoplay muted loop id="video" class="video">
+                        <source src="assets/media/Logo HC.mp4" type="video/mp4">
+                        Tu navegador no soporta el elemento de video.
+                    </video>
+                    <div class="overlay-image-container">
+                        <div class="overlay-image-reflection"></div>
+                    </div>
+                    <img id="miImagen" src="assets/media/screenshot1.jpg" alt="Screenshot de la App" class="overlay-image">
+                </div>
+                <div class="containerscreenshotsmovil">
+                    <img class="screenshotsmovil" src="assets/media/screenshot1.jpg" alt="Screenshot Modo Claro">
+                    <img class="screenshotsmovil" src="assets/media/screenshot2.jpg" alt="Screenshot Modo Oscuro">
+                </div>
+                <div class="espacio-extra"></div>
+            </div>
+    
+            <!-- Columna derecha con párrafo y botón -->
+            <div class="right-column">
+                <p>Himnos y Cánticos del Evangelio es una aplicación desarrollada con el propósito de servir como un Himnario Virtual,
+                    una recopilación de más de 1000 Himnos y Cánticos al alcance de la mano.</p>
+                    <button class="download-btn"><a href="archivo_de_descarga.zip" download></a>Descargar</button>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features">
+        <h2>Características principales</h2>
+        <div class="features-container">
+            <div class="feature busqueda">
+                <img src="assets/media/search-icon.png" alt="Búsqueda avanzada">
+                <h3>Búsqueda Avanzada y Sencilla</h3>
+                <p>Encuentra cualquier himno o cántico de forma rápida con nuestro sistema de búsqueda.</p>
+            </div>
+            <div class="feature categorias">
+                <div class="img-categorias-container">
+                    <div>
+                        <img src="assets/media/indice_alfabetico.png" alt="Categorías">
+                    </div>
+                    <div>
+                        <img src="assets/media/indice_numerico.png" alt="Categorías">
+                    </div>
+                    <div>
+                        <img src="assets/media/indice_favoritos.png" alt="Categorías">
+                    </div>
+                </div>
+                <h3>Categorías Organizadas</h3>
+                <p>Los himnos están organizados por categorías para que encuentres lo que buscas fácilmente, también incluye varios índices.</p>
+            </div>
+            <div class="feature offline">
+                <img src="assets/media/offline.png" alt="Modo offline">
+                <h3>Completamente Offline</h3>
+                <p>Accede a todos los himnos y pistas sin necesidad de conexión a internet.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fails Section -->
+    <section id="fallas">
+        <h2>Información Extra y Limitaciones Actuales</h2>
+        <div class="primer-parrafo">
+            <div class="texto">
+                La app ha sido desarrollada en Python, con el <a href="https://flet.dev/">Framework Flet</a>. El desarrollo comenzó en 2023 como un proyecto personal: una aplicación de escritorio que utilizaba
+                una base de datos muy sencilla con los 585 himnos y 67 coritos del Himnario venezolano, para aprender a usar la tecnología Flet, la cual apenas estaba dando
+                sus primeros pasos. <br>
+                Con el pasar del tiempo el proyecto fue creciendo cada vez más, surgieron nuevas ideas y las personas mostraban su interés en obtener este Himnario Virtual;
+            fue a finales de 2023/principios de 2024 que finalmente se presentó la primera oportunidad de llevar la aplicación de escritorio a los teléfonos android,
+            y desde entonces la app ha estado en un constante "prueba y error"; se solucionaba un fallo y se añadían otros 3 más (de los cuales algunos no han podido ser
+            solucionados aún), pero finalmente, gracias al Señor, desde Enero de 2025 la app está al 100% de su funcionamiento.
+            </div>
+            <div class="video2-container">       
+             <video autoplay muted loop id="video2" class="video2">
+                <source src="assets/media/Flet.mp4" type="video/mp4">
+                Tu navegador no soporta el elemento de video.
+             </video>
+            </div>
+        </div>
+        <div class="limitaciones">
+            <h3>Hasta ahora, la app tiene las siguientes fallas conocidas:</h3>
+            <ul>
+                <li>En ocasiones, al momento de abrir la app el inicio se buguea y la barra de búsqueda se cierra, además de aparecer un gran espacio en blanco donde debería ir el título del Himno.
+                Esto parece ser más bien un error de la propia tecnología que de la app ya que, como se mencionó anteriormente, es una tecnología que sigue en desarrollo; se está procurando
+                buscar una solución pronta para esto.</li>
+                <li>En algunos teléfonos el cambio de color de la app no funciona correctamente, se elige un nuevo color y al volver a entrar a la app no se guarda el cambio.</li>
+                <li>Si se reproduce una pista y luego se detiene, y posteriormente se reproduce un audio de Whatsapp o algún vídeo en otra red social, la pista del himnario empieza a sonar.
+                    Cabe destacar que este es un comportamiento normal de muchos reproductores de música, pero se está buscando una solución para esto.
+                </li>
+                <li>Aunque no es un fallo sí cuenta como limitación, y es que la app actualmente solo está disponible para teléfonos Android; se está procurando más adelante sacar una versión
+                    para teléfonos Iphone, ya que el proceso para hacerlo es un poco más complicado.
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contacto</h2>
+        <div class="contactos">
+            <div class="contacto-andy">
+                <p>Si quieres reportar algún fallo en la app (algún error de redacción en la letra y/o versículos,
+                    alguna pista incorrecta o que no suene, cualquier tipo de falla no mencionada en la sección de fallas conocidas) por favor contáctanos! Puedes hacerlo enviando un mensaje al siguiente correo:</p>
+                <p class="correo">andydev737@gmail.com</p>
+            </div>
+            <div class="contacto-nat">
+                <p>Si quieres contactar con el diseñador del logo, puedes hacerlo por este medio:</p>
+                <div class="link-nat">
+                <p><a href="https://www.instagram.com/natdesign.studi0/">natdesign.studi0.</a></p>
+                <img src="assets/media/ig.png" alt="Ícono de Instagram">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Andrés Padrón. Todos los derechos reservados.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
