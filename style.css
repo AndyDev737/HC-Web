@@ -205,6 +205,14 @@ nav ul li:hover {
     background-color: #f1f1f1;
 }
 
+#contact a{
+    color: #0073ff;
+    text-decoration: underline;
+}
+#contact a:visited{
+    color: #0073ff;
+}
+
 #contact h2 {
     font-size: 2.5rem;
     margin-bottom: 20px;
