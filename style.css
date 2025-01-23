@@ -125,14 +125,18 @@ nav ul li:hover {
 }
 
 .download-btn {
+    text-decoration: none;
+    display: inline-block;
     margin-left: 1vw;
     background-color: #1976D3;
     color: white;
     border: none;
     padding: 10px 20px;
     font-size: 16px;
+    font-weight: bold;
     cursor: pointer;
     border-radius: 15px;
+    text-align: center;
     transition: background-color 0.3s ease;
 }
 
@@ -292,6 +296,11 @@ nav ul li:hover {
         width: 40%;
     }
 
+    .container {
+        display: flex;
+        flex-direction: column;
+    }
+
     nav {
         overflow-x: auto;
         white-space: nowrap;
@@ -320,7 +329,7 @@ nav ul li:hover {
     }
 
     .left-column {
-        width: 40vw;
+        width: 100%;
         flex: 1;
         justify-items: center;
         align-content: center;
@@ -339,8 +348,12 @@ nav ul li:hover {
         transition: all 0.3s ease;
     }
 
-    .screenshotsmovil:hover{
-        transform: scale(2) translate(20px);
+    .screen1:hover{
+        transform: scale(1.5) translate(40px);
+    }
+
+    .screen2:hover{
+        transform: scale(1.5) translate(-40px);
     }
     
     .video-container {
@@ -351,19 +364,22 @@ nav ul li:hover {
     }
 
     .video {
-        width: 40vw;
+        margin-top: 10px;
+        width: 70vw;
         object-fit: cover;
         border-radius: 15px;
         transition: all 0.3s ease;
     }
 
     .video:hover{
-        transform: scale(1.5) translate(40px, 30px);
+        transform: scale(1.2) translate(0px, 50px);
     }
 
     .right-column {
-        font-size: 15px;
+        width: 100%;
+        font-size: 20px;
         padding: 10px;
+        text-align: left;
     }
 
     .download-btn {
@@ -467,6 +483,7 @@ nav ul li:hover {
         width: 40vw;
         flex: 1;
         position: relative;
+        align-content: center;
     }
     
     .video-container {
