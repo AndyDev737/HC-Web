@@ -592,3 +592,38 @@ footer .socials a:hover {
     text-decoration: underline;
 }
 
+.site-footer {
+    padding: 2rem 1rem;
+    background-color: #121318; /* Color claro, cámbialo según tu diseño */
+    text-align: center;
+    border-top: 1px solid #121318;
+    margin-top: 3rem;
+}
+
+.footer-content p {
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    color: #ffffff;
+}
+
+.github-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px; /* Espacio entre el badge y el link */
+    flex-wrap: wrap;
+}
+
+.repo-link {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.85rem;
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 500;
+}
+
+.repo-link:hover {
+    text-decoration: underline;
+}
