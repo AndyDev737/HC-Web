@@ -140,6 +140,13 @@ nav ul li:hover {
     transition: background-color 0.3s ease;
 }
 
+.download-btn span {
+    font-family: inherit;
+    font-weight: inherit;
+    color: inherit;
+    font-size: inherit;
+}
+
 .download-btn:hover {
     background-color: #1735a2;
 }
@@ -584,3 +591,4 @@ footer .socials a {
 footer .socials a:hover {
     text-decoration: underline;
 }
+
