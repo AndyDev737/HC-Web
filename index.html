@@ -1,0 +1,611 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#201d50" />
+    <meta
+      name="description"
+      content="Un himnario virtual para buscar, leer y escuchar más de 1.500 himnos y cánticos del Evangelio, con Biblia RVR1960, partituras y melodías sin conexión."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Himnos y Cánticos del Evangelio" />
+    <meta
+      property="og:description"
+      content="Más ligero, más rápido y en todos tus dispositivos. Himnos, Biblia RVR1960, partituras y melodías, también sin conexión."
+    />
+    <meta property="og:image" content="assets/app-mark.png" />
+    <title>Himnos y Cánticos del Evangelio</title>
+    <link rel="icon" type="image/png" href="assets/app-mark.png" />
+    <link rel="preload" href="assets/fonts/instrument-sans-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="config.js" defer></script>
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+    <header class="site-header">
+      <a class="brand" href="#inicio" aria-label="Himnos y Cánticos del Evangelio, inicio">
+        <span class="brand-mark">
+          <img class="brand-static" src="assets/app-mark.png" alt="" width="58" height="58" />
+          <video
+            class="brand-motion"
+            muted
+            playsinline
+            preload="metadata"
+            poster="assets/app-mark.png"
+            aria-hidden="true"
+          >
+            <source src="assets/logo-animado.mp4" type="video/mp4" />
+          </video>
+        </span>
+        <span class="brand-name">Himnos y Cánticos<br />del Evangelio</span>
+      </a>
+
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="site-nav"
+        aria-label="Abrir navegación"
+      >
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="site-nav" id="site-nav" aria-label="Navegación principal">
+        <a href="#experiencia">La experiencia</a>
+        <a href="#biblia">La Biblia</a>
+        <a href="#historia">La historia</a>
+        <a
+          class="nav-app"
+          data-app-link
+          href="https://himnos-y-canticos-del-evangelio.pages.dev/"
+          target="_blank"
+          rel="noopener"
+        >
+          Abrir el himnario
+        </a>
+      </nav>
+    </header>
+
+    <main id="contenido">
+      <section class="hero" id="inicio" aria-labelledby="hero-title">
+        <div class="hero-glow hero-glow-one" aria-hidden="true"></div>
+        <div class="hero-glow hero-glow-two" aria-hidden="true"></div>
+        <div class="hero-inner">
+          <div class="hero-copy">
+            <p class="hero-kicker"><span class="kicker-dot"></span> Una experiencia renovada: más ligera, rápida y en todos tus dispositivos</p>
+            <h1 id="hero-title">Canciones que encuentran el camino de vuelta.</h1>
+            <p class="hero-description">
+              A veces basta una frase para recordar un himno. Encuéntralo,
+              vuelve a su letra y escucha su melodía desde un mismo lugar.
+            </p>
+            <a class="button button-lime" href="#probar">Prueba a buscar</a>
+            <p class="hero-note">Más de 1.500 himnos y cánticos. Sin cuenta.</p>
+          </div>
+
+          <div class="finder" id="probar" aria-labelledby="finder-title">
+            <div class="finder-topline">
+              <span class="finder-logo" aria-hidden="true">
+                <img src="assets/app-mark.png" alt="" width="28" height="28" />
+              </span>
+              <span>Una muestra del buscador</span>
+              <span class="finder-live"><i></i> prueba interactiva</span>
+            </div>
+            <h2 id="finder-title">¿Qué himno tienes en mente?</h2>
+            <label class="search-field">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <circle cx="10.8" cy="10.8" r="6.8"></circle>
+                <path d="m16 16 4.5 4.5"></path>
+              </svg>
+              <input
+                id="hymn-search"
+                type="search"
+                placeholder="Escribe una palabra o un número"
+                autocomplete="off"
+                aria-describedby="search-help search-status"
+              />
+              <kbd>/</kbd>
+            </label>
+            <p class="search-help" id="search-help">
+              Prueba con cinco títulos del catálogo o elige uno para ver su vista en la app
+            </p>
+            <div class="search-suggestions" aria-label="Búsquedas de ejemplo">
+              <button type="button" data-query="Cristo">Cristo</button>
+              <button type="button" data-query="cielo">cielo</button>
+              <button type="button" data-query="casa">casa</button>
+            </div>
+            <div class="search-results" id="search-results" aria-live="polite"></div>
+            <p class="search-status" id="search-status" role="status">
+              Ejemplos tomados del catálogo
+            </p>
+
+            <article
+              class="sample-hymn"
+              id="sample-hymn"
+              aria-label="Vista de ejemplo del himno en la aplicación"
+              hidden
+            >
+              <button class="sample-back" type="button" data-sample-back>
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M15 19 8 12l7-7"></path>
+                </svg>
+                <span>Volver a los resultados</span>
+              </button>
+
+              <div class="sample-scroll" data-sample-scroll>
+                <header class="sample-hymn-head">
+                  <span class="sample-hymn-num" data-sample-num>1</span>
+                  <div class="sample-hymn-text">
+                    <h3 class="sample-hymn-name" data-sample-title></h3>
+                    <p class="sample-hymn-meta">
+                      <span>Himnos</span> · Métrica
+                      <span class="sample-meter" data-sample-meter></span>
+                    </p>
+                  </div>
+                </header>
+
+                <div class="sample-actions" aria-hidden="true">
+                  <span class="sample-concordance">
+                    <svg viewBox="0 0 16 16" aria-hidden="true">
+                      <g fill="currentColor">
+                        <path d="M12 13c0 1.105-1.12 2-2.5 2S7 14.105 7 13s1.12-2 2.5-2 2.5.895 2.5 2"></path>
+                        <path fill-rule="evenodd" d="M12 3v10h-1V3z"></path>
+                        <path d="M11 2.82a1 1 0 0 1 .804-.98l3-.6A1 1 0 0 1 16 2.22V4l-5 1z"></path>
+                        <path fill-rule="evenodd" d="M0 11.5a.5.5 0 0 1 .5-.5H4a.5.5 0 0 1 0 1H.5a.5.5 0 0 1-.5-.5m0-4A.5.5 0 0 1 .5 7H8a.5.5 0 0 1 0 1H.5a.5.5 0 0 1-.5-.5m0-4A.5.5 0 0 1 .5 3H8a.5.5 0 0 1 0 1H.5a.5.5 0 0 1-.5-.5"></path>
+                      </g>
+                    </svg>
+                    <span>Concordancias</span>
+                    <b>1</b>
+                  </span>
+                  <span class="sample-tool-buttons">
+                    <span class="sample-tool" aria-hidden="true">
+                      <svg viewBox="0 0 24 24">
+                        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"></path>
+                      </svg>
+                    </span>
+                    <span class="sample-tool" aria-hidden="true">
+                      <svg viewBox="0 0 24 24">
+                        <circle cx="18" cy="5" r="2.6"></circle>
+                        <circle cx="6" cy="12" r="2.6"></circle>
+                        <circle cx="18" cy="19" r="2.6"></circle>
+                        <path d="m8.4 10.8 7.2-4.2M8.4 13.2l7.2 4.2"></path>
+                      </svg>
+                    </span>
+                    <span class="sample-tool" aria-hidden="true">
+                      <svg viewBox="0 0 24 24">
+                        <rect x="8" y="8" width="12" height="13" rx="2"></rect>
+                        <path d="M16 8V5a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h2"></path>
+                      </svg>
+                    </span>
+                    <span class="sample-tool" aria-hidden="true">
+                      <svg viewBox="0 0 24 24">
+                        <path d="M4 6h12M4 12h12M4 18h7"></path>
+                        <path d="M18 14.5v6M15 17.5h6"></path>
+                      </svg>
+                    </span>
+                  </span>
+                </div>
+
+                <div class="sample-modes" aria-hidden="true">
+                  <span class="sample-mode is-active">Letra</span>
+                  <span class="sample-mode">Partitura</span>
+                </div>
+
+                <div class="sample-pager" aria-hidden="true">
+                  <span class="sample-pager-side">‹ Anterior</span>
+                  <span class="sample-pager-position" data-sample-position>Himnos · N° 1</span>
+                  <span class="sample-pager-side">Siguiente ›</span>
+                </div>
+
+                <section class="sample-verses" aria-label="Versículos del himno">
+                  <h4>Versículos</h4>
+                  <p class="sample-verses-list" data-sample-verses></p>
+                </section>
+
+                <p class="sample-lyrics" data-sample-lyrics></p>
+
+                <p class="sample-note">
+                  Vista ilustrativa. En esta muestra la reproducción, los enlaces y los
+                  botones están desactivados.
+                </p>
+              </div>
+
+              <div class="sample-dock-layer" aria-hidden="true">
+                <div class="sample-dock">
+                  <span class="sample-dock-times">
+                    <span>0:00</span><i>/</i><span>--:--</span>
+                  </span>
+                  <svg class="sample-dock-ring" viewBox="0 0 60 60">
+                    <circle cx="30" cy="30" r="26"></circle>
+                  </svg>
+                  <span class="sample-dock-play">
+                    <svg viewBox="0 0 24 24">
+                      <path d="M8.5 5.3v13.4L19 12z"></path>
+                    </svg>
+                  </span>
+                  <span class="sample-dock-tools">
+                    <span class="sample-dock-divider"></span>
+                    <span class="sample-dock-settings">
+                      <svg viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="3.25" stroke-width="2"></circle>
+                        <path d="M19.14 12.94a7.49 7.49 0 0 0 0-1.88l2.03-1.58a.5.5 0 0 0 .12-.64l-1.92-3.32a.5.5 0 0 0-.6-.22l-2.39.96a7.28 7.28 0 0 0-1.63-.94l-.36-2.54A.48.48 0 0 0 13.9 2h-3.84a.48.48 0 0 0-.49.41L9.2 4.95a7.28 7.28 0 0 0-1.63.94l-2.39-.96a.5.5 0 0 0-.6.22L2.66 8.47a.5.5 0 0 0 .12.64L4.81 10.7a7.49 7.49 0 0 0 0 1.88l-2.03 1.58a.5.5 0 0 0-.12.64l1.92 3.32a.5.5 0 0 0 .6.22l2.39-.96a7.28 7.28 0 0 0 1.63.94l.36 2.54a.48.48 0 0 0 .49.41h3.84a.48.48 0 0 0 .49-.41l.36-2.54a7.28 7.28 0 0 0 1.63-.94l2.39.96a.5.5 0 0 0 .6-.22l1.92-3.32a.5.5 0 0 0-.12-.64l-2.03-1.58Z"></path>
+                      </svg>
+                    </span>
+                  </span>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+        <div class="hero-bottom" aria-hidden="true">
+          <span>Una colección compartida</span>
+          <svg class="soundwave" viewBox="0 0 184 30" fill="none">
+            <path d="M1 15h6m5-7v14m7-19v24m7-17v10m7-15v20m7-12v5m7-11v17m7-23v29m7-17v6m7-12v18m7-24v30m7-14v2m7-8v14m7-20v26m7-15v4m7-10v16m7-22v28m7-14v1m7-8v15m7-20v24m7-13v2m7-8v14m7-20v25m7-15v5m7-10v15m7-21v27m7-16v4m7-11v18m7-23v28m7-15v1m7-7v13m7-20v26m7-14v3m7-10v17m7-23v29m7-17v4m7-11v18m7-23v27m7-15v2m7-8v14m7-20v25m7-14v3m7-9v16m7-22v27m7-15v1m7-7v13m7-18v23m7-12v3m7-8v14m7-18v21m7-12v3m7-7v11m7-15v18m7-10v2m7-5v8"></path>
+          </svg>
+          <span>Himnos · Coros · Otros · Inglés</span>
+        </div>
+      </section>
+
+      <section class="collection" aria-label="La colección en cifras">
+        <div class="collection-inner">
+          <p><strong>1.503</strong><span>himnos y cánticos</span></p>
+          <span class="collection-plus" aria-hidden="true">+</span>
+          <p><strong>1.610</strong><span>melodías para escuchar</span></p>
+          <span class="collection-plus" aria-hidden="true">+</span>
+          <p><strong>4</strong><span>secciones para explorar</span></p>
+        </div>
+      </section>
+
+      <section class="evolution section-wrap" aria-labelledby="evolution-title">
+        <div class="experience-heading">
+          <p class="eyebrow">Más ligero, en todas partes</p>
+          <h2 id="evolution-title">Del APK pesado a una experiencia web total.</h2>
+          <p>
+            Lo que antes exigía descargar más de 300 MB en Android, ahora cabe en
+            un espacio mínimo (menos de 50 MB) con una fluidez radicalmente
+            superior. Funciona en tu teléfono, tableta o computadora, sin
+            importar el sistema operativo.
+          </p>
+        </div>
+
+        <div class="evolution-grid">
+          <article class="evolution-card evolution-card-primary">
+            <p class="evolution-label">El cambio, en cifras</p>
+            <p class="evolution-weight">
+              <span>300 MB</span>
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M4 12h15m-5-5 5 5-5 5"></path>
+              </svg>
+              <strong>&lt; 50 MB</strong>
+            </p>
+            <p>
+              El contenido completo, la Biblia y las partituras viajan contigo
+              sin ocupar el espacio de antes.
+            </p>
+          </article>
+
+          <article class="evolution-card">
+            <span class="evolution-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <rect x="2.5" y="4" width="13" height="10" rx="1.6"></rect>
+                <path d="M6 18h6M9 14v4"></path>
+                <rect x="15.5" y="9" width="6" height="11" rx="1.6"></rect>
+              </svg>
+            </span>
+            <h3>Un himnario, todos tus dispositivos</h3>
+            <p>
+              Android, iPhone, iPad, Windows, Mac y Linux. La misma colección,
+              desde el navegador que ya usas.
+            </p>
+          </article>
+
+          <article class="evolution-card">
+            <span class="evolution-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M12 3v11m0 0 4-4m-4 4-4-4"></path>
+                <path d="M4 15v4.5A1.5 1.5 0 0 0 5.5 21h13a1.5 1.5 0 0 0 1.5-1.5V15"></path>
+              </svg>
+            </span>
+            <h3>Se instala como una app</h3>
+            <p>
+              Añádela a tu pantalla de inicio con un solo toque, sin tiendas ni
+              cuentas. Después, funciona sin conexión.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="experience section-wrap" id="experiencia" aria-labelledby="experience-title">
+        <div class="experience-heading">
+          <p class="eyebrow">Todo en un mismo lugar</p>
+          <h2 id="experience-title">El himnario, a tu manera.</h2>
+          <p>
+            Entra por el recuerdo que tienes: un número, una frase, una letra
+            que quieres leer o una melodía que quieres volver a escuchar.
+          </p>
+        </div>
+
+        <div class="product-viewer">
+          <div class="viewer-copy">
+            <div class="viewer-tabs" role="tablist" aria-label="Vistas de la aplicación">
+              <button
+                id="view-tab-catalogo"
+                class="viewer-tab"
+                type="button"
+                role="tab"
+                aria-selected="true"
+                aria-controls="app-preview"
+                tabindex="0"
+                data-screen="catalogo"
+              >
+                Explorar
+              </button>
+              <button
+                id="view-tab-himno"
+                class="viewer-tab"
+                type="button"
+                role="tab"
+                aria-selected="false"
+                aria-controls="app-preview"
+                tabindex="-1"
+                data-screen="himno"
+              >
+                Leer y escuchar
+              </button>
+            </div>
+            <div class="viewer-description" aria-live="polite">
+              <span class="viewer-index" data-viewer-index>01</span>
+              <h3 data-viewer-title>Empieza por donde quieras</h3>
+              <p data-viewer-copy>
+                Recorre las secciones o busca por número y por palabras que
+                recuerdes.
+              </p>
+            </div>
+            <div class="viewer-controls">
+              <button class="viewer-arrow" type="button" data-viewer-prev aria-label="Vista anterior">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m15 18-6-6 6-6"></path></svg>
+              </button>
+              <span class="viewer-count"><span data-viewer-current>01</span> / 02</span>
+              <button class="viewer-arrow" type="button" data-viewer-next aria-label="Vista siguiente">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m9 18 6-6-6-6"></path></svg>
+              </button>
+            </div>
+          </div>
+          <figure class="app-preview" id="app-preview" role="tabpanel" aria-labelledby="view-tab-catalogo" tabindex="0">
+            <div class="preview-ambient" aria-hidden="true"></div>
+            <div class="preview-image-wrap">
+              <img
+                id="app-preview-image"
+                src="assets/captura-portada.png"
+                alt="Pantalla de inicio y catálogo de la aplicación."
+                width="2160"
+                height="1350"
+                loading="lazy"
+              />
+            </div>
+            <span class="preview-sticker" aria-hidden="true">
+              <svg viewBox="0 0 28 28" fill="none"><path d="M14 3v22M3 14h22M6.2 6.2l15.6 15.6m0-15.6L6.2 21.8"></path></svg>
+            </span>
+          </figure>
+        </div>
+      </section>
+
+      <section class="bible" id="biblia" aria-labelledby="bible-title">
+        <div class="bible-inner">
+          <div class="bible-copy">
+            <p class="eyebrow">Estudio y devoción unidos</p>
+            <h2 id="bible-title">La Biblia RVR1960 completa en tus manos.</h2>
+            <p>
+              66 libros y 1.189 capítulos disponibles sin conexión. Añade notas
+              personales, marca versículos con colores personalizados y mantén un
+              registro de estudio conectado directamente con los himnos.
+            </p>
+            <ul class="bible-facts">
+              <li><strong>66</strong><span>libros</span></li>
+              <li><strong>1.189</strong><span>capítulos</span></li>
+              <li><strong>31.104</strong><span>versículos</span></li>
+            </ul>
+          </div>
+
+          <div class="bible-reader" aria-hidden="true">
+            <div class="reader-toolbar">
+              <span class="reader-book">Juan</span>
+              <span class="reader-chapter">Capítulo 3</span>
+            </div>
+            <div class="reader-verse reader-verse-marked">
+              <span class="verse-number">16</span>
+              <p>
+                Porque de tal manera amó Dios al mundo, que ha dado a su Hijo
+                unigénito, para que todo aquel que en él cree, no se pierda, mas
+                tenga vida eterna.
+              </p>
+            </div>
+            <div class="reader-verse">
+              <span class="verse-number">17</span>
+              <p>
+                Porque no envió Dios a su Hijo al mundo para condenar al mundo,
+                sino para que el mundo sea salvo por él.
+              </p>
+            </div>
+            <div class="reader-notes">
+              <span class="note-chip note-chip-lime">Nota personal</span>
+              <span class="note-chip note-chip-coral">Favorito</span>
+              <span class="note-chip note-chip-neutral">En estudio</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="music section-wrap" aria-labelledby="music-title">
+        <div class="experience-heading">
+          <p class="eyebrow">Fidelidad musical</p>
+          <h2 id="music-title">La melodía y la partitura, tal como son.</h2>
+          <p>
+            Cada himno conserva su archivo MIDI original y su página exacta en un
+            PDF vectorial. Nada de grabaciones intermedias ni aproximaciones.
+          </p>
+        </div>
+
+        <div class="music-grid">
+          <article class="music-card">
+            <span class="music-number">01</span>
+            <h3>Piano acústico, sin adornos</h3>
+            <p>
+              Las 1.610 melodías se escuchan con un piano acústico muestreado,
+              fiel al archivo original de cada himno.
+            </p>
+          </article>
+          <article class="music-card">
+            <span class="music-number">02</span>
+            <h3>A tu tono y a tu ritmo</h3>
+            <p>
+              Transpone, ajusta la velocidad y controla el volumen sin alterar la
+              letra ni la partitura.
+            </p>
+          </article>
+          <article class="music-card">
+            <span class="music-number">793 páginas</span>
+            <h3>Partituras nítidas a cualquier zoom</h3>
+            <p>
+              Un único PDF vectorial permite ampliar cada página sin perder
+              definición, también a pantalla completa.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="offline" aria-labelledby="offline-title">
+        <div class="offline-inner">
+          <div class="offline-symbol" aria-hidden="true">
+            <svg viewBox="0 0 72 72" fill="none">
+              <path d="M22 18.5a24 24 0 0 1 36 4.1L63 28M63 17v11H52M50 53.5a24 24 0 0 1-36-4.1L9 44M9 55V44h11"></path>
+              <path d="M36 25v22m-8-15h16m-16 8h16"></path>
+            </svg>
+          </div>
+          <div class="offline-copy">
+            <p class="eyebrow">Va contigo, incluso sin señal</p>
+            <h2 id="offline-title">Conéctate una vez. Vuelve cuando quieras.</h2>
+            <p>
+              Olvida las descargas pesadas de más de 300 MB. Esta nueva versión
+              web optimiza cada recurso para ocupar una fracción mínima de tu
+              dispositivo. Instálala con un solo toque desde tu navegador y
+              disfrútala sin conexión a internet, sin anuncios y sin necesidad de
+              crear cuentas.
+            </p>
+            <a class="underlined-link" href="#historia">Conoce cómo empezó</a>
+          </div>
+          <div class="offline-orbit" aria-hidden="true">
+            <span>OFF</span>
+            <span>LINE</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="story section-wrap" id="historia" aria-labelledby="story-title">
+        <div class="story-heading">
+          <p class="eyebrow">De una idea pequeña a un himnario entero</p>
+          <h2 id="story-title">Una historia hecha de canciones y constancia.</h2>
+          <p>
+            Lo que empezó como un proyecto personal fue creciendo con cada
+            nueva idea y con las personas que querían tener el himnario cerca.
+          </p>
+        </div>
+
+        <div class="story-timeline">
+          <div class="timeline-track" aria-hidden="true">
+            <span class="timeline-progress" data-timeline-progress></span>
+          </div>
+          <div class="timeline-stops" role="group" aria-label="Etapas del proyecto">
+            <button type="button" class="timeline-stop" data-story="0" aria-pressed="true">
+              <span class="stop-point"></span>
+              <span class="stop-year">2023</span>
+              <span class="stop-label">La primera idea</span>
+            </button>
+            <button type="button" class="timeline-stop" data-story="1" aria-pressed="false">
+              <span class="stop-point"></span>
+              <span class="stop-year">2023–24</span>
+              <span class="stop-label">Llegar al móvil</span>
+            </button>
+            <button type="button" class="timeline-stop" data-story="2" aria-pressed="false">
+              <span class="stop-point"></span>
+              <span class="stop-year">2025</span>
+              <span class="stop-label">Crecer y corregir</span>
+            </button>
+            <button type="button" class="timeline-stop" data-story="3" aria-pressed="false">
+              <span class="stop-point"></span>
+              <span class="stop-year">Hoy</span>
+              <span class="stop-label">Una nueva etapa</span>
+            </button>
+          </div>
+
+          <article class="story-card" aria-live="polite">
+            <div class="story-card-date" data-story-date>2023</div>
+            <div class="story-card-copy">
+              <h3 data-story-heading>Todo empezó en una computadora.</h3>
+              <p data-story-text>
+                Una aplicación de escritorio sencilla ayudó a aprender una
+                nueva tecnología. Reunía los 585 himnos y 67 coritos del
+                Himnario Venezolano.
+              </p>
+            </div>
+            <span class="story-card-mark" aria-hidden="true">HC</span>
+          </article>
+        </div>
+      </section>
+
+      <section class="closing" aria-labelledby="closing-title">
+        <div class="closing-shape closing-shape-one" aria-hidden="true"></div>
+        <div class="closing-shape closing-shape-two" aria-hidden="true"></div>
+        <div class="closing-inner">
+          <span class="closing-mark">
+            <img src="assets/app-mark.png" alt="" width="52" height="52" />
+          </span>
+          <p class="eyebrow">Himnos y Cánticos del Evangelio</p>
+          <h2 id="closing-title">Hay himnos que merecen acompañarte.</h2>
+          <a
+            class="button button-lime"
+            data-app-link
+            href="https://himnos-y-canticos-del-evangelio.pages.dev/"
+            target="_blank"
+            rel="noopener"
+          >
+            Abrir la aplicación web
+          </a>
+          <p class="app-status" data-app-status role="status">
+            Disponible para Android, iOS, Windows, Mac y Linux. Funciona offline tras la primera carga.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-main">
+        <a class="footer-brand" href="#inicio">
+          <span class="footer-mark">
+            <img src="assets/app-mark.png" alt="" width="30" height="30" />
+          </span>
+          <span>Himnos y Cánticos del Evangelio</span>
+        </a>
+        <p>Hecho con gratitud para quienes aman estos himnos.</p>
+        <small>© 2026 Andrés Padrón</small>
+      </div>
+      <div class="footer-contact">
+        <span class="footer-contact-label">Contacto</span>
+        <a
+          class="footer-contact-item"
+          href="https://www.instagram.com/nata_neudesign/"
+          target="_blank"
+          rel="noopener"
+        >
+          <span>Logo</span> Natanael Jiménez · @nata_neudesign
+        </a>
+        <a class="footer-contact-item" href="mailto:andydev737@gmail.com">
+          <span>Desarrollo</span> andydev737@gmail.com
+        </a>
+      </div>
+    </footer>
+  </body>
+</html>
