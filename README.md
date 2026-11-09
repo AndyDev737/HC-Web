@@ -119,47 +119,6 @@ tiene un número de versión propio.
 
 ---
 
-## 🧭 Sobre este repositorio
-
-Este repositorio contiene la **página de presentación**, no el código de la
-aplicación web. La landing está hecha con HTML, CSS y JavaScript nativos, y no
-requiere instalar paquetes ni ejecutar un proceso de compilación.
-
-La dirección de la app que utilizan sus botones se configura en
-[`config.js`](./config.js), en la propiedad `appUrl`.
-
-### Probar la página en tu computadora
-
-Con Python instalado, abre PowerShell en la carpeta raíz del repositorio y
-ejecuta:
-
-```powershell
-python -m http.server 4173
-```
-
-Luego visita <http://localhost:4173>. El servidor debe iniciarse en la raíz de
-la landing para que `index.html`, `styles.css`, `script.js` y `assets/` se
-encuentren con sus rutas relativas.
-
-También puedes servirla con cualquier servidor web estático. Publica el
-contenido de este repositorio conservando la carpeta `assets/` y los archivos
-principales en la raíz.
-
-### Archivos principales
-
-| Archivo o carpeta | Contenido |
-| --- | --- |
-| [`index.html`](./index.html) | Secciones, contenido y estructura de la landing |
-| [`styles.css`](./styles.css) | Diseño adaptable, animaciones y estilos |
-| [`script.js`](./script.js) | Búsqueda de ejemplo, navegación y elementos interactivos |
-| [`config.js`](./config.js) | URL de acceso a la app |
-| [`assets/`](./assets/) | Logo, capturas, animación y tipografías |
-
-Las fuentes incluyen sus licencias en `assets/fonts/`. Los botones de acceso a
-la app se abren en una pestaña nueva.
-
----
-
 ## 💌 Créditos
 
 Hecho con gratitud para quienes aman estos himnos.
