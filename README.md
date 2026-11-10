@@ -101,12 +101,13 @@ También encontrarás:
 
 ## 🏷️ Versión
 
-**Versión web: `3.0.6`**
+**Versión web: `3.1.0`**
 
 ## Historial de versiones
 
 Resumen de las novedades publicadas en la aplicación:
 
+- **3.1.0** — La instalación inicial es más rápida; ahora puedes descargar todos los recursos offline o guardarlos a medida que los usas.
 - **3.0.6** — Se añadió la búsqueda de texto en toda la Biblia y el acceso a himnos relacionados por capítulo.
 - **3.0.5** — Se añadió el himno Otros 487 y su pista MIDI.
 - **3.0.4** — Se renovó la presentación de la landing, con logo animado y una muestra interactiva del detalle de un himno.
