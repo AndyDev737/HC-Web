@@ -20,9 +20,9 @@ conexión.
 
 La aplicación reúne:
 
-- **1.503 himnos y cánticos**, organizados en cuatro secciones: Himnos, Coros,
+- **Más de 1.500 himnos y cánticos**, organizados en cuatro secciones: Himnos, Coros,
   Otros e Inglés.
-- **1.610 melodías** para escuchar.
+- **Más de 1.600 melodías** para escuchar.
 - **Una colección de partituras en PDF vectorial de 793 páginas.**
 - **La Biblia Reina-Valera 1960 completa:** 66 libros, 1.189 capítulos y
   31.104 versículos.
@@ -101,7 +101,21 @@ También encontrarás:
 
 ## 🏷️ Versión
 
-**Versión web: `3.0.4`**
+**Versión web: `3.0.6`**
+
+## Historial de versiones
+
+Resumen de las novedades publicadas en la aplicación:
+
+- **3.0.6** — Se añadió la búsqueda de texto en toda la Biblia y el acceso a himnos relacionados por capítulo.
+- **3.0.5** — Se añadió el himno Otros 487 y su pista MIDI.
+- **3.0.4** — Se renovó la presentación de la landing, con logo animado y una muestra interactiva del detalle de un himno.
+- **3.0.3** — La Biblia incorporó notas privadas, favoritos de versículos con color y una lista de estudio; se ampliaron la navegación por índices y los enlaces entre citas bíblicas e himnos.
+- **3.0.2** — Mejoras en la preparación offline de la PWA y en la finalización y el bucle del reproductor MIDI.
+- **3.0.1** — Corrección de la disponibilidad offline de las partituras PDF y ajustes del precache.
+- **3.0.0** — Primera versión web 3.x, con catálogo, búsqueda, lectura de himnos, reproducción MIDI, partituras y navegación renovada.
+
+La sección **Ayuda → Novedades por versión** contiene el mismo resumen dentro de la app.
 
 La versión corresponde a la declarada por la aplicación web en su proyecto y
 en su sección «Acerca de». La landing es un sitio estático independiente y no
