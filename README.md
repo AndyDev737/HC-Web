@@ -101,12 +101,15 @@ También encontrarás:
 
 ## 🏷️ Versión
 
-**Versión web: `3.1.0`**
+**Versión web: `3.2.1`**
 
 ## Historial de versiones
 
 Resumen de las novedades publicadas en la aplicación:
 
+- **3.2.1** — Las melodías y partituras descargadas se conservan entre actualizaciones; la descarga completa añade automáticamente solo los recursos nuevos.
+- **3.2.0** — El catálogo se organiza en páginas de 50 himnos; se añadieron dos himnos a Otros y cuatro a Inglés con sus pistas MIDI.
+- **3.1.1** — Safari en iPhone ahora muestra los pasos para añadir la app a la pantalla de inicio; el acceso a las opciones offline indica que permite configurar las descargas.
 - **3.1.0** — La instalación inicial es más rápida; ahora puedes descargar todos los recursos offline o guardarlos a medida que los usas.
 - **3.0.6** — Se añadió la búsqueda de texto en toda la Biblia y el acceso a himnos relacionados por capítulo.
 - **3.0.5** — Se añadió el himno Otros 487 y su pista MIDI.
